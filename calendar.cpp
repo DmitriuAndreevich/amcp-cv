@@ -30,7 +30,7 @@ int findDayOfWeekFirstDayOfMonth(int year, int month) {
 
 // Функция, которая возвращает количество дней в n-ом месяце
 int getCountDayInMonth(int year, int month) {
-    int countDayInMonth[] = { 31,28,31,30,31,30,31,31,30,31,3,31 }; // Количество дней в месяце 
+    int countDayInMonth[] = { 31,28,31,30,31,30,31,31,30,31,30,31 }; // Количество дней в месяце 
 
     // Проверяем, високосный ли год
     if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
@@ -99,7 +99,7 @@ void printYear(int year) {
                 // Печатаем дни месяца, если они попадают в нужный диапазон
                 if (day >= 1 && day <= daysC) {
                     if (weeksFirst > weeksThird && weeksFirst > weeksSecond && day == daysC) {
-                        if ((dayFirst + day) % 7 != 1) { std::cout << " ";}  // Если это последний день месяца
+                        if ((dayFirst + day) % 7 != 1) { std::cout << " "; }  // Если это последний день месяца
                         std::cout << day;
                         first = true;
                         second = true;
@@ -267,7 +267,7 @@ void printmonthandcalendar(int year, int month) {
 // Основная функция программы
 int main(int argc, char* argv[]) {
     // Проверка количества аргументов командной строки
-    if (argc < 2 || argc >= 3) {
+    if (argc < 2 || argc > 3) {
         std::cerr << "Unknown" << std::endl;  // Ошибка при неверных аргументах
         return 1;
     }
